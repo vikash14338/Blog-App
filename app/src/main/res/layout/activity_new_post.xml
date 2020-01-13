@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewPost"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:adjustViewBounds="true"
+        android:background="#00ffffff"
+        android:scaleType="centerCrop"
+        android:tag="Click to add Image"
+        app:srcCompat="@drawable/add_btn" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@drawable/input_outline"
+        android:hint="Title"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Description"
+        android:textSize="20sp"
+        android:background="@drawable/input_outline"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post"
+
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        />
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="15dp"
+    tools:context=".RegisterActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:hint="UserName"
+        android:id="@+id/et_userName"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/input_outline"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:hint="Email"
+        android:id="@+id/et_userEmail"
+        android:padding="10dp"
+        android:background="@drawable/input_outline"
+        android:layout_margin="20dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        android:hint="Email"
+        android:id="@+id/et_userPassword"
+        android:padding="10dp"
+        android:background="@drawable/input_outline"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/btn_register"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        />
+
+
+
+
+
+</LinearLayout>
