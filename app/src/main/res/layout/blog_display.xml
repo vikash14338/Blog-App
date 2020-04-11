@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
@@ -9,6 +10,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_user"
+            android:text="Contributor"
+
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#ee4325"
+            android:layout_margin="10dp"
+            />
 
         <ImageView
             android:id="@+id/post_image"
@@ -40,23 +53,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:gravity="start">
+
             <ImageButton
+                android:id="@+id/btn_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_like"
+                android:background="#0000FFFF"
                 android:padding="10dp"
                 android:src="@drawable/image_like_white"
-                android:background="#0000FFFF"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/post_user"
-            android:text="Contributor"
-            android:gravity="end"
-            android:padding="10dp"
-            android:textSize="12sp"
-            />
+                android:scaleType="centerCrop"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_comment"
+                android:background="#ffffff"
+                android:text="Comments"
+                android:textStyle="normal"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                />
+
+
+            <ImageButton
+                android:id="@+id/btn_share"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:scaleType="fitEnd"
+                android:src="@drawable/image_share"
+                 />
+
         </LinearLayout>
     </LinearLayout>
 

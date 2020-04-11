@@ -17,7 +17,7 @@
         android:id="@+id/et_userName"
         android:padding="10dp"
         android:layout_margin="20dp"
-        android:background="@drawable/input_outline"/>
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:hint="Email"
         android:id="@+id/et_userEmail"
         android:padding="10dp"
-        android:background="@drawable/input_outline"
+
         android:layout_margin="20dp"
         />
     <EditText
@@ -34,10 +34,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:textSize="18sp"
-        android:hint="Email"
+        android:hint="Password"
         android:id="@+id/et_userPassword"
         android:padding="10dp"
-        android:background="@drawable/input_outline"
         android:layout_margin="20dp"
         />
     <Button

@@ -20,8 +20,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -73,21 +76,26 @@ public class ProfileActivity extends AppCompatActivity {
                     UploadTask uploadTask=filePath.putFile(imageUri);
                     final Task<Uri> uriTask=uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                         @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                        public Task<Uri> then(Task<UploadTask.TaskSnapshot> task) throws Exception {
                             if (!task.isSuccessful())
                             {
                                 throw task.getException();
                             }
+                            Log.e("download url",""+filePath.getDownloadUrl());
                             return filePath.getDownloadUrl();
+
                         }
                     }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
+                        public void onComplete(@NonNull final Task<Uri> task) {
                             if (task.isSuccessful())
                             {
-                                DatabaseReference newUser = mUserDatabase.child(uid);
+                                final Uri uri=task.getResult();
+                                final DatabaseReference newUser = mUserDatabase.child(uid);
                                 newUser.child("ProfileName").setValue(name);
-                                newUser.child("ProfileImage").setValue(imageUri.toString());
+                                newUser.child("ProfileImage").setValue(uri.toString());
+                                newUser.child("uid").setValue(uid);
+
                                 mProgress.dismiss();
                                 finish();
                             }
@@ -107,6 +115,7 @@ public class ProfileActivity extends AppCompatActivity {
            Uri imageUri=data.getData();
             CropImage.activity(imageUri)
                     .setGuidelines(CropImageView.Guidelines.ON)
+                    .setCropShape(CropImageView.CropShape.OVAL)
                     .setAspectRatio(1,1)
                     .start(this);
         }

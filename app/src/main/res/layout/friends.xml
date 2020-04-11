@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="15dp"
+    >
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/friend_image"
+        android:src="@color/design_default_color_primary_dark"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/friend_name"
+            android:text="Kevin"
+            android:textSize="22sp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:background="#17DADA"
+            android:id="@+id/friend_message"
+            android:textSize="22sp"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,9 +7,19 @@
        android:icon="@drawable/add_icon"
         android:title="@string/add_post"/>
     <item
-        android:id="@+id/setting"
-        android:title="Setting"
+        android:id="@+id/profile"
+        android:title="Profile"
         app:showAsAction="never"/>
+    <item
+        android:title="Friends"
+        android:id="@+id/friend"
+        app:showAsAction="always"
+        android:icon="@drawable/icon_friend"/>
+
+    <item
+        android:id="@+id/chat"
+        app:showAsAction="never"
+        android:title="Chat" />
     <item
         android:id="@+id/logout"
         android:title="LogOut"

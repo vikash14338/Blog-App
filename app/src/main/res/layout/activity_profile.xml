@@ -16,7 +16,8 @@
         android:adjustViewBounds="true"
         android:src="@drawable/add_btn"
         android:scaleType="centerCrop"
-        android:id="@+id/upd_Image"/>
+        android:id="@+id/upd_Image"
+        />
 
     <EditText
         android:id="@+id/upd_username"

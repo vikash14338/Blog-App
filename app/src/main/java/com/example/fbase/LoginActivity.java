@@ -3,7 +3,9 @@ package com.example.fbase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -197,6 +199,31 @@ public class LoginActivity extends AppCompatActivity {
             });
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setMessage("Do you Want to Exit?");
+        builder.setCancelable(true);
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Exit to home of your Phone
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+            }
+        });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 
 
